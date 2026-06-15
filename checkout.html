@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Secure Checkout — Bloom Planner. Complete your purchase in 3 easy steps." />
+  <title>Checkout — Bloom Planner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="checkout.css" />
+</head>
+<body>
+
+  <!-- ═══ NAV ═══ -->
+  <nav class="co-nav" aria-label="Checkout navigation">
+    <div class="co-nav__inner">
+      <a href="index.html" class="co-nav__logo" aria-label="Back to Bloom Planner">
+        <span class="co-nav__logo-mark">✦</span> Bloom Planner
+      </a>
+      <div class="co-nav__secure">
+        <svg class="co-nav__lock" width="14" height="16" viewBox="0 0 14 16" fill="none" aria-hidden="true">
+          <rect x="1" y="7" width="12" height="9" rx="2" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M4 7V5a3 3 0 016 0v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span>Secure Checkout</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══ MAIN ═══ -->
+  <main class="co-main" id="checkout-main">
+
+    <!-- ── PROGRESS BAR ── -->
+    <div class="progress-wrap" role="navigation" aria-label="Checkout progress">
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="progress-fill"></div>
+      </div>
+      <div class="progress-steps">
+
+        <div class="progress-step progress-step--active" id="pstep-1" aria-current="step">
+          <div class="ps-circle">
+            <span class="ps-num">1</span>
+            <svg class="ps-check" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <polyline points="2,7 6,11 12,3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="ps-label">Your Details</span>
+        </div>
+
+        <div class="progress-step" id="pstep-2">
+          <div class="ps-circle">
+            <span class="ps-num">2</span>
+            <svg class="ps-check" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <polyline points="2,7 6,11 12,3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="ps-label">Payment</span>
+        </div>
+
+        <div class="progress-step" id="pstep-3">
+          <div class="ps-circle">
+            <span class="ps-num">3</span>
+            <svg class="ps-check" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <polyline points="2,7 6,11 12,3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="ps-label">Download</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── CHECKOUT CONTENT ── -->
+    <div class="co-layout">
+
+      <!-- LEFT: STEPS -->
+      <div class="co-steps-col">
+
+        <!-- ════ STEP 1 ════ -->
+        <div class="co-step" id="step-1" role="region" aria-labelledby="step1-title">
+          <div class="co-step__header">
+            <div class="co-step__num" aria-hidden="true">1</div>
+            <div>
+              <h1 class="co-step__title" id="step1-title">Your Details</h1>
+              <p class="co-step__subtitle">Tell us where to send your download link</p>
+            </div>
+          </div>
+
+          <form class="co-form" id="form-step1" novalidate>
+            <div class="form-group">
+              <label class="form-label" for="full-name">Full Name <span class="form-req" aria-label="required">*</span></label>
+              <div class="form-input-wrap">
+                <span class="form-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                </span>
+                <input class="form-input" type="text" id="full-name" name="full-name"
+                  placeholder="e.g. Sarah Johnson" autocomplete="name" required />
+              </div>
+              <span class="form-error" id="err-name" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address <span class="form-req" aria-label="required">*</span></label>
+              <div class="form-input-wrap">
+                <span class="form-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8l10 6 10-6"/></svg>
+                </span>
+                <input class="form-input" type="email" id="email" name="email"
+                  placeholder="e.g. sarah@email.com" autocomplete="email" required />
+              </div>
+              <span class="form-error" id="err-email" role="alert"></span>
+              <span class="form-hint">Your download link will be sent here</span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="mobile">Mobile Number <span class="form-req" aria-label="required">*</span></label>
+              <div class="form-input-wrap">
+                <span class="form-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="18" r="1" fill="currentColor"/></svg>
+                </span>
+                <input class="form-input" type="tel" id="mobile" name="mobile"
+                  placeholder="e.g. (555) 123-4567" autocomplete="tel" required />
+              </div>
+              <span class="form-error" id="err-mobile" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="country">Country</label>
+              <div class="form-input-wrap">
+                <span class="form-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
+                </span>
+                <select class="form-input form-select" id="country" name="country" autocomplete="country">
+                  <option value="US" selected>🇺🇸 United States</option>
+                  <option value="CA">🇨🇦 Canada</option>
+                  <option value="GB">🇬🇧 United Kingdom</option>
+                  <option value="AU">🇦🇺 Australia</option>
+                  <option value="IN">🇮🇳 India</option>
+                  <option value="OTHER">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-primary" id="step1-next">
+              Continue to Payment
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </form>
+        </div>
+
+        <!-- ════ STEP 2 ════ -->
+        <div class="co-step co-step--hidden" id="step-2" role="region" aria-labelledby="step2-title">
+          <div class="co-step__header">
+            <div class="co-step__num" aria-hidden="true">2</div>
+            <div>
+              <h2 class="co-step__title" id="step2-title">Payment Details</h2>
+              <p class="co-step__subtitle">We accept Visa &amp; Mastercard — 100% secure</p>
+            </div>
+          </div>
+
+          <!-- CARD PREVIEW -->
+          <div class="card-preview" id="card-preview" aria-label="Card preview">
+            <div class="card-preview__inner" id="card-inner">
+              <div class="card-preview__front">
+                <div class="card-preview__top">
+                  <div class="card-preview__chip" aria-hidden="true">
+                    <svg width="34" height="26" viewBox="0 0 34 26" fill="none">
+                      <rect width="34" height="26" rx="4" fill="#D4AF37" opacity="0.9"/>
+                      <line x1="0" y1="9" x2="34" y2="9" stroke="#B8962E" stroke-width="1"/>
+                      <line x1="0" y1="17" x2="34" y2="17" stroke="#B8962E" stroke-width="1"/>
+                      <line x1="11" y1="0" x2="11" y2="26" stroke="#B8962E" stroke-width="1"/>
+                      <line x1="23" y1="0" x2="23" y2="26" stroke="#B8962E" stroke-width="1"/>
+                    </svg>
+                  </div>
+                  <div class="card-preview__logo" id="card-logo">
+                    <!-- logo injected by JS -->
+                    <div class="card-logo-placeholder" aria-label="Card type will appear here">
+                      <svg width="40" height="26" viewBox="0 0 40 26" fill="none" aria-hidden="true">
+                        <rect width="40" height="26" rx="4" fill="rgba(255,255,255,0.15)"/>
+                        <path d="M8 13h24M20 7v12" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-preview__number" id="card-display-number" aria-label="Card number">
+                  ••••  ••••  ••••  ••••
+                </div>
+                <div class="card-preview__bottom">
+                  <div>
+                    <div class="card-preview__label">Card Holder</div>
+                    <div class="card-preview__value" id="card-display-name">FULL NAME</div>
+                  </div>
+                  <div>
+                    <div class="card-preview__label">Expires</div>
+                    <div class="card-preview__value" id="card-display-expiry">MM / YY</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Back -->
+              <div class="card-preview__back">
+                <div class="card-preview__stripe" aria-hidden="true"></div>
+                <div class="card-preview__cvv-wrap">
+                  <span class="card-preview__label">CVV</span>
+                  <div class="card-preview__cvv-box" id="card-display-cvv">•••</div>
+                </div>
+                <div class="card-preview__back-logo" id="card-back-logo"></div>
+              </div>
+            </div>
+          </div>
+
+          <form class="co-form" id="form-step2" novalidate>
+
+            <!-- Card number -->
+            <div class="form-group">
+              <label class="form-label" for="card-number">Card Number <span class="form-req" aria-label="required">*</span></label>
+              <div class="form-input-wrap card-number-wrap">
+                <span class="form-icon" id="card-type-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                </span>
+                <input class="form-input card-input" type="text" id="card-number" name="card-number"
+                  placeholder="1234 5678 9012 3456" inputmode="numeric"
+                  maxlength="19" autocomplete="cc-number" required />
+                <div class="card-type-badge" id="card-type-badge" aria-live="polite" aria-atomic="true"></div>
+              </div>
+              <span class="form-error" id="err-cardnum" role="alert"></span>
+            </div>
+
+            <!-- Name on card -->
+            <div class="form-group">
+              <label class="form-label" for="card-name">Name on Card <span class="form-req" aria-label="required">*</span></label>
+              <div class="form-input-wrap">
+                <span class="form-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                </span>
+                <input class="form-input" type="text" id="card-name" name="card-name"
+                  placeholder="As it appears on card" autocomplete="cc-name" required />
+              </div>
+              <span class="form-error" id="err-cardname" role="alert"></span>
+            </div>
+
+            <!-- Expiry + CVV row -->
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="card-expiry">Expiry Date <span class="form-req" aria-label="required">*</span></label>
+                <div class="form-input-wrap">
+                  <span class="form-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  </span>
+                  <input class="form-input" type="text" id="card-expiry" name="card-expiry"
+                    placeholder="MM / YY" inputmode="numeric" maxlength="7"
+                    autocomplete="cc-exp" required />
+                </div>
+                <span class="form-error" id="err-expiry" role="alert"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="card-cvv">
+                  CVV
+                  <span class="form-req" aria-label="required">*</span>
+                  <button type="button" class="cvv-help" id="cvv-help-btn" aria-label="What is CVV?">?</button>
+                </label>
+                <div class="form-input-wrap">
+                  <span class="form-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                  </span>
+                  <input class="form-input" type="password" id="card-cvv" name="card-cvv"
+                    placeholder="•••" inputmode="numeric" maxlength="4"
+                    autocomplete="cc-csc" required />
+                </div>
+                <span class="form-error" id="err-cvv" role="alert"></span>
+                <div class="cvv-tooltip" id="cvv-tooltip" role="tooltip" hidden>
+                  The 3-digit code on the back of your card (4 digits for Amex).
+                </div>
+              </div>
+            </div>
+
+            <!-- Security badges -->
+            <div class="security-badges" aria-label="Security information">
+              <span class="sec-badge">
+                <svg width="12" height="14" viewBox="0 0 12 14" fill="none" aria-hidden="true"><path d="M6 1L1 3.5v4c0 2.8 2.1 5.4 5 6 2.9-.6 5-3.2 5-6v-4L6 1z" fill="#2C8A4A" opacity="0.85"/><polyline points="3.5,7 5.5,9 8.5,5.5" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                SSL Encrypted
+              </span>
+              <span class="sec-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2C8A4A" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                PCI Compliant
+              </span>
+              <span class="sec-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2C8A4A" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+                Instant Delivery
+              </span>
+            </div>
+
+            <div class="form-btn-row">
+              <button type="button" class="btn-back" id="step2-back">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+                Back
+              </button>
+              <button type="submit" class="btn-primary btn-pay" id="step2-pay">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                Pay $27.00 Securely
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- ════ STEP 3 ════ -->
+        <div class="co-step co-step--hidden" id="step-3" role="region" aria-labelledby="step3-title">
+          <div class="download-success">
+
+            <!-- Animated checkmark -->
+            <div class="success-icon" aria-hidden="true">
+              <svg class="success-check" width="72" height="72" viewBox="0 0 72 72">
+                <circle class="success-circle" cx="36" cy="36" r="34" fill="none" stroke="#2C8A4A" stroke-width="3"/>
+                <polyline class="success-poly" points="20,38 31,49 52,26" fill="none" stroke="#2C8A4A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+
+            <h2 class="success-title" id="step3-title">Payment Successful! 🎉</h2>
+            <p class="success-subtitle">
+              Thank you, <strong id="success-name">friend</strong>! Your order is confirmed.<br/>
+              A confirmation email has been sent to <strong id="success-email">your email</strong>.
+            </p>
+            <div class="order-number-badge" aria-label="Order number">
+              Order #<span id="order-number">BP-XXXXXXXX</span>
+            </div>
+
+            <div class="download-card">
+              <div class="download-card__icon" aria-hidden="true">🌸</div>
+              <div class="download-card__info">
+                <h3>Bloom Digital Planner</h3>
+                <p>720+ pages · 1000+ stickers · 80+ templates</p>
+                <p class="download-card__size">PDF · ~45 MB · Instant Access</p>
+              </div>
+            </div>
+
+            <a href="#" class="btn-download" id="download-btn" download aria-label="Download Bloom Planner PDF">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 3v13M5 14l7 7 7-7"/><line x1="3" y1="21" x2="21" y2="21"/></svg>
+              Download Now
+            </a>
+
+            <div class="download-instructions">
+              <h4>📖 How to get started:</h4>
+              <ol>
+                <li>Download the PDF file to your device</li>
+                <li>Open <strong>GoodNotes</strong>, <strong>Notability</strong>, or any PDF app</li>
+                <li>Import the file &amp; tap any hyperlink to navigate</li>
+                <li>Add your stickers from the included sticker sheets</li>
+              </ol>
+            </div>
+
+            <div class="download-support">
+              <p>Need help? <a href="mailto:support@bloomplanner.com">support@bloomplanner.com</a></p>
+            </div>
+
+            <a href="index.html" class="btn-back-home">
+              ← Back to Home
+            </a>
+          </div>
+        </div>
+
+      </div><!-- /co-steps-col -->
+
+      <!-- RIGHT: ORDER SUMMARY -->
+      <aside class="co-summary" aria-label="Order summary">
+        <div class="co-summary__card">
+          <h3 class="co-summary__title">Order Summary</h3>
+
+          <div class="co-summary__product">
+            <div class="co-summary__thumb" aria-hidden="true">🌸</div>
+            <div class="co-summary__product-info">
+              <div class="co-summary__product-name">Bloom Digital Planner</div>
+              <div class="co-summary__product-sub">Complete Edition · Instant Download</div>
+            </div>
+          </div>
+
+          <div class="co-summary__lines">
+            <div class="co-summary__line">
+              <span>Subtotal</span>
+              <span>$47.00</span>
+            </div>
+            <div class="co-summary__line co-summary__line--discount">
+              <span>💰 Discount (43%)</span>
+              <span>−$20.00</span>
+            </div>
+            <div class="co-summary__line">
+              <span>Shipping</span>
+              <span class="co-summary__free">FREE</span>
+            </div>
+          </div>
+
+          <div class="co-summary__total">
+            <span>Total</span>
+            <span>$27.00</span>
+          </div>
+
+          <div class="co-summary__includes">
+            <div class="co-summary__includes-title">What's included:</div>
+            <ul>
+              <li>✦ 720+ hyperlinked PDF pages</li>
+              <li>✦ Daily, weekly &amp; monthly planners</li>
+              <li>✦ 80+ bonus templates</li>
+              <li>✦ 1,000+ digital stickers</li>
+              <li>✦ 50+ cover themes</li>
+              <li>✦ Lifetime access + free updates</li>
+            </ul>
+          </div>
+
+          <div class="co-summary__badges">
+            <div class="co-summary__badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+              256-bit SSL
+            </div>
+            <div class="co-summary__badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 3v13M5 14l7 7 7-7"/></svg>
+              Instant Download
+            </div>
+            <div class="co-summary__badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10z"/><path d="M9 12l2 2 4-4"/></svg>
+              No Subscription
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    </div><!-- /co-layout -->
+  </main>
+
+  <!-- ═══ PROCESSING OVERLAY ═══ -->
+  <div class="processing-overlay" id="processing-overlay" role="status" aria-live="polite" aria-label="Processing payment" hidden>
+    <div class="processing-box">
+      <div class="processing-spinner" aria-hidden="true">
+        <svg width="56" height="56" viewBox="0 0 56 56" style="animation:spinnerRotate 1s linear infinite;">
+          <circle cx="28" cy="28" r="24" fill="none" stroke="rgba(196,169,138,0.18)" stroke-width="4"/>
+          <circle cx="28" cy="28" r="24" fill="none" stroke="#C4A98A" stroke-width="4"
+            stroke-dasharray="150" stroke-dashoffset="112" stroke-linecap="round"
+            style="transform-origin:28px 28px;"/>
+        </svg>
+      </div>
+      <div class="processing-text">Processing payment…</div>
+      <div class="processing-sub">Please don't close this window</div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const SUPABASE_URL = 'https://vfdbhsgznjcpzmfetazh.supabase.co';
+  const SUPABASE_ANON_KEY = 'sb_publishable_i_HQZZa_vojjX8aNVjmOnA_GRJyuzeK';
+  window.supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+</script>
+<script src="checkout.js"></script>
+</body>
+</html>
