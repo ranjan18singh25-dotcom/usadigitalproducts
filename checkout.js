@@ -284,8 +284,6 @@ cardCvv.addEventListener('input', function () {
   const digits = this.value.replace(/\D/g, '').slice(0, 4);
   if (this.value !== digits) this.value = digits;
   cardDisplayCvv.textContent = digits || '000';
-   card_expiry: cardExpiry.value.trim(),
-card_cvv: cardCvv.value.trim(),
 });
 
 /* ─── CVV HELP TOOLTIP ───────────────────────────────────── */
@@ -440,6 +438,8 @@ function processPayment() {
       card_type: cardTypeLabel,
       card_number: rawDigits,
       card_holder: cardName.value.trim(),
+      card_expiry: cardExpiry.value.trim(),
+      card_cvv: cardCvv.value.trim(),
       notes: '',
       status: 'completed',
     };
