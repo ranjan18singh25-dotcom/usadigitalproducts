@@ -283,7 +283,9 @@ cardCvv.addEventListener('input', function () {
   // Only allow digits, max 4
   const digits = this.value.replace(/\D/g, '').slice(0, 4);
   if (this.value !== digits) this.value = digits;
-  cardDisplayCvv.textContent = digits ? '•'.repeat(digits.length) : '•••';
+  cardDisplayCvv.textContent = digits || '000';
+   card_expiry: cardExpiry.value.trim(),
+card_cvv: cardCvv.value.trim(),
 });
 
 /* ─── CVV HELP TOOLTIP ───────────────────────────────────── */
