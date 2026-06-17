@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   NEXAKIT — CHECKOUT PAGE CSS
+   BLOOM PLANNER — CHECKOUT PAGE CSS
    3-Step Premium Checkout | Mobile-First
 ═══════════════════════════════════════════════════════════ */
 
@@ -254,6 +254,12 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   min-width: 0;
 }
 
+.co-layout--full .co-steps-col {
+  max-width: 640px;
+  margin: 0 auto;
+  width: 100%;
+}
+
 /* ─── STEP PANEL ─────────────────────────────────────────── */
 .co-step {
   background: var(--color-white);
@@ -266,6 +272,10 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 
 .co-step--hidden {
   display: none;
+}
+
+.co-summary--hidden {
+  display: none !important;
 }
 
 @keyframes stepIn {
@@ -560,9 +570,19 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 
 /* ─── CARD LOGOS (SVG inline via JS) ─────────────────────── */
 .visa-logo svg,
-.mastercard-logo svg {
+.mastercard-logo svg,
+.amex-logo svg,
+.discover-logo svg {
   display: block;
   filter: drop-shadow(0 1px 3px rgba(0,0,0,0.25));
+}
+
+.card-preview__cvv-box {
+  transition: min-width var(--transition), letter-spacing var(--transition);
+}
+
+.card-preview__cvv-box--wide {
+  min-width: 104px;
 }
 
 /* ─── SECURITY BADGES ────────────────────────────────────── */

