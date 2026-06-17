@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Nexakit</title>
+  <meta name="description" content="Nexakit Privacy Policy — learn how we collect, use, and protect your personal information." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --purple: #7C3AED;
+      --purple-dark: #5B21B6;
+      --purple-light: #A78BFA;
+      --purple-xlight: #EDE9FE;
+      --pink: #EC4899;
+      --pink-light: #F9A8D4;
+      --white: #ffffff;
+      --gray-50: #F9FAFB;
+      --gray-100: #F3F4F6;
+      --gray-200: #E5E7EB;
+      --gray-400: #9CA3AF;
+      --gray-500: #6B7280;
+      --gray-600: #4B5563;
+      --gray-700: #374151;
+      --gray-800: #1F2937;
+      --gray-900: #111827;
+      --dark: #0D0A1E;
+      --dark-mid: #1A1433;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--gray-800);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 0 24px;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+
+    .nav-logo {
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--purple), var(--pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.02em;
+      transition: opacity 0.2s;
+    }
+
+    .nav-logo:hover {
+      opacity: 0.8;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, var(--purple), var(--pink));
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 700;
+      padding: 10px 22px;
+      border-radius: 50px;
+      letter-spacing: 0.01em;
+      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(124, 58, 237, 0.45);
+    }
+
+    .nav-cta:active {
+      transform: translateY(0);
+    }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      background: linear-gradient(135deg, #4C1D95 0%, #7C3AED 40%, #9D4EDD 65%, #EC4899 100%);
+      position: relative;
+      overflow: hidden;
+      padding: 90px 24px 80px;
+      text-align: center;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 80%, rgba(236, 72, 153, 0.25) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 80% 20%, rgba(167, 139, 250, 0.3) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .page-header::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: var(--white);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    .page-header-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .page-header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(8px);
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+    }
+
+    .page-header h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    }
+
+    .page-header-meta {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.95rem;
+      font-weight: 400;
+    }
+
+    .page-header-meta strong {
+      color: rgba(255, 255, 255, 0.95);
+      font-weight: 600;
+    }
+
+    /* ── CONTENT AREA ── */
+    .content-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 64px 24px 96px;
+    }
+
+    /* ── INTRO BOX ── */
+    .intro-box {
+      background: linear-gradient(135deg, var(--purple-xlight), #FDF2F8);
+      border: 1px solid rgba(124, 58, 237, 0.15);
+      border-left: 4px solid var(--purple);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 56px;
+    }
+
+    .intro-box p {
+      color: var(--gray-700);
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .intro-box p strong {
+      color: var(--purple-dark);
+    }
+
+    /* ── SECTION ── */
+    .policy-section {
+      margin-bottom: 52px;
+      padding-bottom: 52px;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .policy-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .section-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--purple), var(--pink));
+      color: var(--white);
+      font-size: 0.78rem;
+      font-weight: 800;
+      border-radius: 10px;
+      margin-bottom: 14px;
+      box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+      flex-shrink: 0;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .section-header-text {
+      flex: 1;
+    }
+
+    .section-header-text h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      margin-top: 4px;
+    }
+
+    .policy-section p {
+      color: var(--gray-600);
+      font-size: 0.975rem;
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+
+    .policy-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ── LIST CARD ── */
+    .list-card {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin: 18px 0;
+    }
+
+    .list-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .list-card ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      color: var(--gray-700);
+      font-size: 0.96rem;
+      line-height: 1.6;
+    }
+
+    .list-card ul li::before {
+      content: '';
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--purple), var(--pink));
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+
+    .list-card ul li strong {
+      color: var(--gray-900);
+    }
+
+    /* ── HIGHLIGHT BOX ── */
+    .highlight-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: #FFFBEB;
+      border: 1px solid #FDE68A;
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin: 18px 0;
+    }
+
+    .highlight-box.green {
+      background: #F0FDF4;
+      border-color: #BBF7D0;
+    }
+
+    .highlight-box.purple {
+      background: var(--purple-xlight);
+      border-color: rgba(124, 58, 237, 0.2);
+    }
+
+    .highlight-icon {
+      font-size: 1.3rem;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .highlight-box p {
+      color: var(--gray-700) !important;
+      font-size: 0.94rem !important;
+      margin-bottom: 0 !important;
+      line-height: 1.65 !important;
+    }
+
+    .highlight-box.green p {
+      color: #166534 !important;
+    }
+
+    .highlight-box.purple p {
+      color: var(--purple-dark) !important;
+    }
+
+    /* ── CONTACT CARD ── */
+    .contact-card {
+      background: linear-gradient(135deg, var(--purple), #9D4EDD, var(--pink));
+      border-radius: 20px;
+      padding: 36px 40px;
+      text-align: center;
+      box-shadow: 0 16px 48px rgba(124, 58, 237, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -10%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .contact-card h3 {
+      color: var(--white);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .contact-card p {
+      color: rgba(255,255,255,0.8) !important;
+      font-size: 0.92rem !important;
+      margin-bottom: 20px !important;
+    }
+
+    .contact-email-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      color: var(--purple-dark);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 12px 28px;
+      border-radius: 50px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .contact-email-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      padding: 48px 24px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-size: 1.15rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--purple-light), var(--pink-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.02em;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px 24px;
+    }
+
+    .footer-links a {
+      color: var(--gray-400);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--purple-light);
+    }
+
+    .footer-links a.active {
+      color: var(--pink-light);
+    }
+
+    .footer-divider {
+      width: 100%;
+      max-width: 400px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+    }
+
+    .footer-copy {
+      color: var(--gray-400);
+      font-size: 0.82rem;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .page-header {
+        padding: 70px 20px 65px;
+      }
+
+      .content-wrapper {
+        padding: 48px 20px 72px;
+      }
+
+      .intro-box {
+        padding: 22px 22px;
+      }
+
+      .contact-card {
+        padding: 28px 24px;
+      }
+
+      .section-header {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .section-number {
+        margin-bottom: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── STICKY NAV ── -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">✦ Nexakit</a>
+      <a href="index.html#get-started" class="nav-cta">Get $0.99 →</a>
+    </div>
+  </nav>
+
+  <!-- ── PAGE HEADER ── -->
+  <header class="page-header">
+    <div class="page-header-content">
+      <div class="page-header-badge">📄 Legal Document</div>
+      <h1>Privacy Policy</h1>
+      <p class="page-header-meta">Last updated: <strong>June 16, 2026</strong></p>
+    </div>
+  </header>
+
+  <!-- ── CONTENT ── -->
+  <main class="content-wrapper">
+
+    <!-- Intro -->
+    <div class="intro-box">
+      <p>
+        At <strong>Nexakit</strong>, your privacy is important to us. This Privacy Policy explains what information we collect when you visit our website or purchase our digital planner, how we use that information, and the choices you have. By using our site, you agree to the practices described below.
+      </p>
+    </div>
+
+    <!-- 1. Information We Collect -->
+    <section class="policy-section" id="information-we-collect">
+      <div class="section-header">
+        <div class="section-number">1</div>
+        <div class="section-header-text">
+          <h2>Information We Collect</h2>
+        </div>
+      </div>
+      <p>When you purchase from Nexakit or interact with our website, we may collect the following types of personal information:</p>
+      <div class="list-card">
+        <ul>
+          <li><strong>Name</strong> — Your first and last name, used to personalise your order and communications.</li>
+          <li><strong>Email address</strong> — Used to send your digital download link, order confirmation, and occasional product updates.</li>
+          <li><strong>Payment details</strong> — Processed securely through our payment provider (Stripe). We do <em>not</em> store your full card number, CVV, or banking credentials on our servers.</li>
+          <li><strong>Billing address</strong> — Collected by our payment processor for fraud-prevention purposes.</li>
+          <li><strong>Device &amp; browser information</strong> — Basic technical data (IP address, browser type, referring URL) collected automatically for analytics and security.</li>
+        </ul>
+      </div>
+      <p>We only collect information that is necessary to provide you with our products and services. We do not request sensitive data such as government IDs or medical information.</p>
+    </section>
+
+    <!-- 2. How We Use Information -->
+    <section class="policy-section" id="how-we-use">
+      <div class="section-header">
+        <div class="section-number">2</div>
+        <div class="section-header-text">
+          <h2>How We Use Your Information</h2>
+        </div>
+      </div>
+      <p>The information we collect is used solely to operate and improve our business. Specifically, we use your data for:</p>
+      <div class="list-card">
+        <ul>
+          <li><strong>Order fulfilment</strong> — Processing your purchase and delivering your digital planner file(s) immediately after payment.</li>
+          <li><strong>Email delivery</strong> — Sending your order confirmation, download link, and any important account notifications.</li>
+          <li><strong>Customer support</strong> — Responding to your questions, requests, or complaints in a timely and helpful manner.</li>
+          <li><strong>Product improvements</strong> — Understanding how customers use and discover our products so we can make better planners.</li>
+          <li><strong>Legal compliance</strong> — Meeting our obligations under applicable laws and regulations, such as tax record-keeping.</li>
+        </ul>
+      </div>
+      <div class="highlight-box purple">
+        <span class="highlight-icon">✉️</span>
+        <p>If you opt in to our mailing list, we may occasionally send you tips, new product announcements, or exclusive offers. You can unsubscribe at any time using the link at the bottom of any email.</p>
+      </div>
+    </section>
+
+    <!-- 3. Information Sharing -->
+    <section class="policy-section" id="information-sharing">
+      <div class="section-header">
+        <div class="section-number">3</div>
+        <div class="section-header-text">
+          <h2>Information Sharing &amp; Disclosure</h2>
+        </div>
+      </div>
+      <div class="highlight-box green">
+        <span class="highlight-icon">🔒</span>
+        <p><strong>We do not sell, rent, or trade your personal information to any third party.</strong> Your data is never used for targeted advertising by external companies.</p>
+      </div>
+      <p>We share your information only when strictly necessary:</p>
+      <div class="list-card">
+        <ul>
+          <li><strong>Payment processors (Stripe)</strong> — Your payment details are handled directly by Stripe, a PCI-DSS compliant payment provider. We share only the minimum data required to process your transaction. Stripe's Privacy Policy is available at stripe.com/privacy.</li>
+          <li><strong>Email delivery services</strong> — We use a trusted email service provider to send transactional emails (order confirmations, download links). They process your email address solely on our behalf.</li>
+          <li><strong>Legal authorities</strong> — We may disclose information if required to do so by law, court order, or governmental regulation.</li>
+        </ul>
+      </div>
+      <p>All third-party service providers we work with are bound by confidentiality obligations and are not permitted to use your information for their own purposes.</p>
+    </section>
+
+    <!-- 4. Data Security -->
+    <section class="policy-section" id="data-security">
+      <div class="section-header">
+        <div class="section-number">4</div>
+        <div class="section-header-text">
+          <h2>Data Security</h2>
+        </div>
+      </div>
+      <p>We take reasonable technical and organisational measures to protect your personal information against unauthorised access, loss, misuse, or disclosure.</p>
+      <div class="list-card">
+        <ul>
+          <li><strong>SSL/TLS encryption</strong> — Our website uses HTTPS with SSL/TLS encryption to secure all data transmitted between your browser and our servers.</li>
+          <li><strong>Secure payment handling</strong> — All payment transactions are encrypted and processed through Stripe's secure infrastructure. We never have access to your raw card data.</li>
+          <li><strong>Access controls</strong> — Access to customer data is restricted to authorised personnel on a need-to-know basis.</li>
+        </ul>
+      </div>
+      <p>While we strive to use commercially acceptable means to protect your personal information, please be aware that no method of transmission over the internet or electronic storage is 100% secure. We cannot guarantee absolute security.</p>
+    </section>
+
+    <!-- 5. Cookies -->
+    <section class="policy-section" id="cookies">
+      <div class="section-header">
+        <div class="section-number">5</div>
+        <div class="section-header-text">
+          <h2>Cookies &amp; Analytics</h2>
+        </div>
+      </div>
+      <p>Our website uses cookies — small text files stored on your device — to improve your browsing experience and understand how visitors interact with our site.</p>
+      <div class="list-card">
+        <ul>
+          <li><strong>Essential cookies</strong> — Required for the website to function properly (e.g., maintaining your session during checkout).</li>
+          <li><strong>Analytics cookies</strong> — We use basic, privacy-respecting analytics tools to understand page traffic and visitor behaviour in aggregate. This data is anonymised and cannot be used to identify you personally.</li>
+          <li><strong>No tracking / ad cookies</strong> — We do not use third-party advertising cookies or cross-site tracking technologies.</li>
+        </ul>
+      </div>
+      <p>You can control or disable cookies through your browser settings. Note that disabling essential cookies may affect the functionality of the checkout process.</p>
+    </section>
+
+    <!-- 6. Your Rights -->
+    <section class="policy-section" id="your-rights">
+      <div class="section-header">
+        <div class="section-number">6</div>
+        <div class="section-header-text">
+          <h2>Your Rights</h2>
+        </div>
+      </div>
+      <p>Depending on your location, you may have certain rights regarding your personal information. We respect and honour these rights:</p>
+      <div class="list-card">
+        <ul>
+          <li><strong>Right to access</strong> — You may request a copy of the personal information we hold about you at any time.</li>
+          <li><strong>Right to deletion</strong> — You may request that we delete your personal data, subject to any legal obligations we may have to retain certain records.</li>
+          <li><strong>Right to opt-out</strong> — You may opt out of marketing communications at any time by clicking "Unsubscribe" in any of our emails, or by contacting us directly.</li>
+          <li><strong>Right to correction</strong> — If any of your information is inaccurate or incomplete, you may ask us to correct it.</li>
+          <li><strong>Right to data portability</strong> — Where applicable, you may request your data in a commonly used, machine-readable format.</li>
+        </ul>
+      </div>
+      <p>To exercise any of these rights, please contact us at the email address provided below. We will respond to your request within a reasonable timeframe, and no later than 30 days.</p>
+    </section>
+
+    <!-- 7. Contact -->
+    <section class="policy-section" id="contact">
+      <div class="section-header">
+        <div class="section-number">7</div>
+        <div class="section-header-text">
+          <h2>Contact Us</h2>
+        </div>
+      </div>
+      <p>If you have any questions, concerns, or requests relating to this Privacy Policy or your personal data, please don't hesitate to reach out. We're happy to help.</p>
+      <div class="contact-card">
+        <h3>Privacy Questions? We're Here.</h3>
+        <p>Our support team typically responds within 24–48 business hours.</p>
+        <a href="mailto:support@nexakit.store" class="contact-email-link">
+          ✉️ support@nexakit.store
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">✦ Nexakit</div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="refund.html">Refund Policy</a>
+        <a href="privacy.html" class="active">Privacy Policy</a>
+      </nav>
+      <div class="footer-divider"></div>
+      <p class="footer-copy">© 2026 Nexakit. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

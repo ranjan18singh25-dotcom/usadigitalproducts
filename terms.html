@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Terms of Service for Nexakit — digital planner product." />
+  <title>Terms of Service — Nexakit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --purple:  #7C3AED;
+      --purple-light: #A78BFA;
+      --pink:    #EC4899;
+      --white:   #FFFFFF;
+      --cream:   #FAFAFA;
+      --text:    #1F1035;
+      --soft:    #4B5563;
+      --muted:   #9CA3AF;
+      --border:  #E5E7EB;
+      --grad:    linear-gradient(135deg, #7C3AED 0%, #9333EA 40%, #A855F7 70%, #EC4899 100%);
+    }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--text); line-height: 1.6; padding-top: 68px; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; }
+
+    /* NAV */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border); height: 68px;
+    }
+    .nav__inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 1.5rem;
+      height: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav__logo {
+      font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700;
+      color: var(--purple); display: flex; align-items: center; gap: 0.35rem;
+    }
+    .nav__logo span { color: var(--pink); }
+    .nav__cta {
+      display: inline-flex; align-items: center;
+      padding: 0.5rem 1.25rem;
+      background: var(--grad); color: var(--white);
+      font-size: 0.85rem; font-weight: 700; border-radius: 9999px;
+      box-shadow: 0 2px 12px rgba(124,58,237,0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .nav__cta:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(124,58,237,0.4); }
+
+    /* HEADER */
+    .page-header {
+      background: var(--grad); padding: 4rem 1.5rem 5rem; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .page-header__orb {
+      position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.3; pointer-events: none;
+    }
+    .page-header__orb--1 { width: 300px; height: 300px; background: #C4B5FD; top: -80px; right: -60px; }
+    .page-header__orb--2 { width: 200px; height: 200px; background: #F9A8D4; bottom: -40px; left: -40px; }
+    .page-header__badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.35);
+      color: rgba(255,255,255,0.9); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.35rem 1rem; border-radius: 9999px; margin-bottom: 1rem;
+    }
+    .page-header h1 {
+      font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700; color: var(--white); margin-bottom: 0.75rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.15);
+    }
+    .page-header__date {
+      font-size: 0.85rem; color: rgba(255,255,255,0.75);
+    }
+    .page-header__wave {
+      position: absolute; bottom: -1px; left: 0; right: 0; line-height: 0;
+    }
+    .page-header__wave svg { width: 100%; height: 50px; }
+
+    /* CONTENT */
+    .content-wrap { max-width: 780px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+
+    .intro-box {
+      background: linear-gradient(135deg, #F5F3FF, #FDF2F8);
+      border: 1px solid #DDD6FE; border-radius: 1rem;
+      padding: 1.5rem 1.75rem; margin-bottom: 2.5rem;
+      font-size: 0.95rem; color: var(--soft); line-height: 1.75;
+    }
+    .intro-box strong { color: var(--purple); }
+
+    .section-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 1.25rem; padding: 2rem 2rem; margin-bottom: 1.5rem;
+      box-shadow: 0 2px 12px rgba(124,58,237,0.06);
+      border-left: 4px solid var(--purple);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .section-card:hover { box-shadow: 0 6px 24px rgba(124,58,237,0.1); transform: translateY(-2px); }
+    .section-card:nth-child(even) { border-left-color: var(--pink); }
+
+    .section-num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--grad); color: var(--white);
+      font-size: 0.8rem; font-weight: 800;
+      margin-bottom: 0.75rem; flex-shrink: 0;
+    }
+    .section-card h2 {
+      font-family: 'Playfair Display', serif; font-size: 1.25rem;
+      font-weight: 700; color: var(--text); margin-bottom: 0.85rem;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .section-card p {
+      font-size: 0.92rem; color: var(--soft); line-height: 1.75; margin-bottom: 0.75rem;
+    }
+    .section-card p:last-child { margin-bottom: 0; }
+    .section-card ul {
+      list-style: none; display: flex; flex-direction: column; gap: 0.5rem;
+      margin: 0.5rem 0 0.75rem;
+    }
+    .section-card ul li {
+      font-size: 0.88rem; color: var(--soft); padding-left: 1.4rem; position: relative;
+    }
+    .section-card ul li::before {
+      content: '✓'; position: absolute; left: 0;
+      color: var(--purple); font-weight: 700;
+    }
+    .section-card ul.cross li::before { content: '×'; color: var(--pink); }
+
+    .highlight-box {
+      background: #F5F3FF; border: 1px solid #DDD6FE;
+      border-radius: 0.75rem; padding: 1rem 1.25rem;
+      font-size: 0.88rem; color: var(--purple); font-weight: 500;
+      margin-top: 0.85rem;
+    }
+    .warning-box {
+      background: #FFF7ED; border: 1px solid #FED7AA;
+      border-radius: 0.75rem; padding: 1rem 1.25rem;
+      font-size: 0.88rem; color: #92400E; margin-top: 0.85rem;
+    }
+
+    .contact-card {
+      background: var(--grad); border-radius: 1.5rem;
+      padding: 2rem; text-align: center; margin-top: 2rem;
+      box-shadow: 0 8px 32px rgba(124,58,237,0.25);
+    }
+    .contact-card h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.4rem;
+      color: var(--white); margin-bottom: 0.5rem;
+    }
+    .contact-card p { color: rgba(255,255,255,0.8); font-size: 0.9rem; margin-bottom: 1.25rem; }
+    .contact-card a {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      background: rgba(255,255,255,0.95); color: var(--purple);
+      font-weight: 700; font-size: 0.9rem;
+      padding: 0.65rem 1.5rem; border-radius: 9999px;
+      transition: transform 0.2s;
+    }
+    .contact-card a:hover { transform: scale(1.04); }
+
+    /* FOOTER */
+    .footer {
+      background: #1F1035; color: rgba(255,255,255,0.7);
+      padding: 2.5rem 1.5rem; text-align: center;
+    }
+    .footer__logo {
+      font-family: 'Playfair Display', serif; font-size: 1.2rem;
+      color: var(--white); margin-bottom: 0.75rem;
+      display: flex; align-items: center; justify-content: center; gap: 0.3rem;
+    }
+    .footer__logo span { color: var(--pink); }
+    .footer__links {
+      display: flex; align-items: center; justify-content: center;
+      gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem;
+    }
+    .footer__links a { font-size: 0.78rem; color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .footer__links a:hover { color: #A78BFA; }
+    .footer__dot { color: rgba(255,255,255,0.2); }
+    .footer__copy { font-size: 0.72rem; color: rgba(255,255,255,0.3); max-width: 500px; margin: 0 auto; }
+
+    @media (max-width: 600px) {
+      .section-card { padding: 1.5rem; }
+      .content-wrap { padding: 2rem 1rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo"><span>✦</span> Nexakit</a>
+      <a href="checkout.html" class="nav__cta">Get $0.99 →</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <div class="page-header__orb page-header__orb--1"></div>
+    <div class="page-header__orb page-header__orb--2"></div>
+    <div class="page-header__badge">Legal</div>
+    <h1>Terms of Service</h1>
+    <p class="page-header__date">Last updated: June 16, 2026</p>
+    <div class="page-header__wave">
+      <svg viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0 0C360 50 1080 50 1440 0V50H0V0Z" fill="#FAFAFA"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content-wrap">
+
+    <div class="intro-box">
+      Please read these Terms of Service carefully before purchasing or using the <strong>Nexakit</strong> digital product. By completing a purchase, you agree to be bound by these terms. If you have any questions, contact us at <strong>support@nexakit.store</strong> before buying.
+    </div>
+
+    <!-- 1. Acceptance -->
+    <div class="section-card">
+      <h2><span class="section-num">1</span> Acceptance of Terms</h2>
+      <p>By accessing our website, making a purchase, or downloading our digital product, you agree to these Terms of Service and all applicable laws and regulations. If you do not agree with any part of these terms, please do not make a purchase.</p>
+      <p>These terms apply to all visitors, users, and customers of Nexakit.</p>
+    </div>
+
+    <!-- 2. Product Description -->
+    <div class="section-card">
+      <h2><span class="section-num">2</span> Product Description</h2>
+      <p>Nexakit is a <strong>digital download product</strong> — a PDF-based planner designed for use with annotation apps on tablets and smartphones. The product includes:</p>
+      <ul>
+        <li>Planner PDF files (2026–2028)</li>
+        <li>Digital sticker sheets (5,000+ stickers)</li>
+        <li>Planner cover designs (150+ covers)</li>
+        <li>Bonus templates and notepaper styles</li>
+        <li>AI Shortcut feature (iOS only)</li>
+      </ul>
+      <div class="highlight-box">
+        📱 <strong>Required:</strong> A compatible PDF annotation app (GoodNotes, Notability, Xodo, etc.) is needed to use this planner. These apps are <strong>not included</strong> in your purchase.
+      </div>
+    </div>
+
+    <!-- 3. Purchase & Payment -->
+    <div class="section-card">
+      <h2><span class="section-num">3</span> Purchase &amp; Payment</h2>
+      <p>All purchases are processed securely. By completing a purchase, you agree to the following:</p>
+      <ul>
+        <li>The listed price ($0.99) is a one-time payment — no subscriptions or recurring charges</li>
+        <li>Your download link will be delivered via email immediately after purchase</li>
+        <li>No physical product is shipped — this is a digital download only</li>
+        <li>Pricing is in USD and may be subject to local taxes</li>
+      </ul>
+      <div class="warning-box">
+        ⚠️ Please ensure you enter a valid, working email address at checkout — this is where your download link will be sent.
+      </div>
+    </div>
+
+    <!-- 4. Intellectual Property -->
+    <div class="section-card">
+      <h2><span class="section-num">4</span> Intellectual Property</h2>
+      <p>All content included in the Nexakit product — including PDF designs, stickers, covers, templates, and graphics — is the exclusive intellectual property of Nexakit and is protected by copyright law.</p>
+      <p><strong>You may:</strong></p>
+      <ul>
+        <li>Use the planner for personal, non-commercial planning and organization</li>
+        <li>Print pages for personal use</li>
+        <li>Use on multiple personal devices you own</li>
+      </ul>
+      <p style="margin-top:0.75rem;"><strong>You may not:</strong></p>
+      <ul class="cross">
+        <li>Resell, redistribute, or share the files with others</li>
+        <li>Claim the designs as your own</li>
+        <li>Use the content for commercial purposes</li>
+        <li>Upload the files to file-sharing platforms</li>
+      </ul>
+    </div>
+
+    <!-- 5. Refund Policy -->
+    <div class="section-card">
+      <h2><span class="section-num">5</span> Refund Policy</h2>
+      <p>Due to the <strong>digital and instant nature</strong> of this product, all sales are generally final. Once the download link is delivered, the product has been received.</p>
+      <p>However, we want every customer to be happy. If you experience any of the following, please contact us immediately:</p>
+      <ul>
+        <li>You did not receive your download email</li>
+        <li>The downloaded files are corrupted or unusable</li>
+        <li>A technical error prevented access to your purchase</li>
+      </ul>
+      <div class="highlight-box">
+        📧 Contact <strong>support@nexakit.store</strong> within 24 hours of purchase and we'll resolve any issues promptly. See our full <a href="refund.html" style="color:var(--purple);font-weight:600;">Refund Policy</a> for details.
+      </div>
+    </div>
+
+    <!-- 6. Disclaimer of Warranties -->
+    <div class="section-card">
+      <h2><span class="section-num">6</span> Disclaimer of Warranties</h2>
+      <p>The Nexakit product is provided "as is" without warranties of any kind, either express or implied. We do not warrant that:</p>
+      <ul class="cross">
+        <li>The product will meet every specific personal planning need</li>
+        <li>The product will work with every PDF annotation app</li>
+        <li>The AI Shortcut feature will work on all iOS devices or with all AI services</li>
+      </ul>
+      <p style="margin-top:0.75rem;">We strive to maintain quality and will address legitimate technical issues, but results from using a planning tool will naturally vary by individual.</p>
+    </div>
+
+    <!-- 7. Limitation of Liability -->
+    <div class="section-card">
+      <h2><span class="section-num">7</span> Limitation of Liability</h2>
+      <p>To the maximum extent permitted by law, Nexakit shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability to use the product.</p>
+      <p>Our total liability to you for any claim arising from these terms or your purchase shall not exceed the amount you paid for the product ($0.99).</p>
+    </div>
+
+    <!-- 8. Governing Law -->
+    <div class="section-card">
+      <h2><span class="section-num">8</span> Governing Law</h2>
+      <p>These Terms of Service shall be governed by and construed in accordance with the laws of the <strong>United States of America</strong>, without regard to its conflict of law provisions.</p>
+      <p>Any disputes arising from these terms will be resolved through good-faith negotiation. If a resolution cannot be reached informally, disputes will be subject to binding arbitration under applicable US laws.</p>
+    </div>
+
+    <!-- 9. Changes to Terms -->
+    <div class="section-card">
+      <h2><span class="section-num">9</span> Changes to Terms</h2>
+      <p>We reserve the right to update or modify these Terms of Service at any time. Changes will be reflected with an updated "Last updated" date at the top of this page.</p>
+      <p>Your continued use of our website or products after changes are posted constitutes your acceptance of the revised terms. We encourage you to review this page periodically.</p>
+    </div>
+
+    <!-- 10. Free Updates -->
+    <div class="section-card">
+      <h2><span class="section-num">10</span> Free Yearly Updates</h2>
+      <p>Your one-time purchase includes <strong>free yearly updates for life</strong>. When new planner years are released, you'll receive an update notification at the email address used at checkout.</p>
+      <ul>
+        <li>Updates are delivered to the same email used at purchase</li>
+        <li>This benefit applies to the original purchaser only</li>
+        <li>Updates are not transferable</li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="contact-card">
+      <h3>Questions about these Terms?</h3>
+      <p>We're happy to clarify anything. Reach out and we'll respond within 24–48 hours.</p>
+      <a href="mailto:support@nexakit.store">✉️ support@nexakit.store</a>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__logo"><span>✦</span> Nexakit</div>
+    <div class="footer__links">
+      <a href="index.html">Home</a>
+      <span class="footer__dot">·</span>
+      <a href="privacy.html">Privacy Policy</a>
+      <span class="footer__dot">·</span>
+      <a href="terms.html">Terms of Service</a>
+      <span class="footer__dot">·</span>
+      <a href="disclaimer.html">Disclaimer</a>
+      <span class="footer__dot">·</span>
+      <a href="refund.html">Refund Policy</a>
+      <span class="footer__dot">·</span>
+      <a href="mailto:support@nexakit.store">Contact</a>
+    </div>
+    <p class="footer__copy">© 2026 Nexakit. All rights reserved. Digital download only — no physical product is shipped.</p>
+  </footer>
+
+</body>
+</html>

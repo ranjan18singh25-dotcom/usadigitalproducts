@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Refund Policy – Nexakit</title>
+  <meta name="description" content="Read the Nexakit refund policy. Understand our policy on digital product sales, exception cases, and how to request support." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --purple:       #7C3AED;
+      --purple-dark:  #5B21B6;
+      --purple-light: #A78BFA;
+      --pink:         #EC4899;
+      --pink-light:   #F9A8D4;
+      --white:        #FFFFFF;
+      --gray-50:      #FAFAFA;
+      --gray-100:     #F3F4F6;
+      --gray-200:     #E5E7EB;
+      --gray-400:     #9CA3AF;
+      --gray-500:     #6B7280;
+      --gray-700:     #374151;
+      --gray-800:     #1F2937;
+      --gray-900:     #111827;
+      --radius-sm:    8px;
+      --radius-md:    14px;
+      --radius-lg:    20px;
+      --shadow-sm:    0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.04);
+      --shadow-md:    0 4px 16px rgba(124,58,237,.12);
+      --shadow-lg:    0 10px 40px rgba(124,58,237,.18);
+      --transition:   all .25s cubic-bezier(.4,0,.2,1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--gray-50);
+      color: var(--gray-800);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Sticky Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, .85);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(124,58,237,.1);
+      padding: 0 2rem;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 20px rgba(124,58,237,.06);
+    }
+
+    .nav-logo {
+      text-decoration: none;
+      font-size: 1.25rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--purple) 0%, var(--pink) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -.02em;
+      transition: var(--transition);
+    }
+    .nav-logo:hover { opacity: .8; }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      background: linear-gradient(135deg, var(--purple) 0%, var(--pink) 100%);
+      color: var(--white);
+      font-size: .875rem;
+      font-weight: 700;
+      padding: .55rem 1.25rem;
+      border-radius: 50px;
+      text-decoration: none;
+      letter-spacing: .01em;
+      box-shadow: 0 4px 14px rgba(236,72,153,.3);
+      transition: var(--transition);
+    }
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(236,72,153,.45);
+    }
+
+    /* ── Page Header ── */
+    .page-header {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #4C1D95 0%, var(--purple) 45%, #BE185D 100%);
+      padding: 5rem 2rem 4.5rem;
+      text-align: center;
+    }
+    .page-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 20% 50%, rgba(236,72,153,.25) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 60% at 80% 30%, rgba(167,139,250,.3) 0%, transparent 70%);
+    }
+    .page-header::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 0; right: 0;
+      height: 60px;
+      background: var(--gray-50);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    .header-badge {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.25);
+      color: rgba(255,255,255,.92);
+      font-size: .8rem;
+      font-weight: 600;
+      padding: .35rem .9rem;
+      border-radius: 50px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+      backdrop-filter: blur(8px);
+    }
+    .header-badge span { font-size: .85em; }
+
+    .page-header h1 {
+      position: relative;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -.03em;
+      margin-bottom: .75rem;
+      line-height: 1.15;
+    }
+
+    .page-header .subtitle {
+      position: relative;
+      color: rgba(255,255,255,.75);
+      font-size: .95rem;
+      font-weight: 400;
+    }
+    .page-header .subtitle strong {
+      color: rgba(255,255,255,.95);
+      font-weight: 600;
+    }
+
+    /* ── Content Wrapper ── */
+    .content-wrapper {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 5rem;
+    }
+
+    /* ── Friendly Note Banner ── */
+    .friendly-banner {
+      background: linear-gradient(135deg, rgba(124,58,237,.08) 0%, rgba(236,72,153,.08) 100%);
+      border: 1.5px solid rgba(124,58,237,.2);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 2rem;
+      margin-bottom: 3rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .friendly-banner .icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+      line-height: 1;
+      margin-top: .1rem;
+    }
+    .friendly-banner p {
+      font-size: .975rem;
+      color: var(--gray-700);
+      line-height: 1.65;
+    }
+    .friendly-banner p strong {
+      color: var(--purple);
+      font-weight: 700;
+    }
+
+    /* ── Section Card ── */
+    .section-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--gray-200);
+      padding: 2rem 2.25rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .section-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--purple) 0%, var(--pink) 100%);
+      border-radius: 4px 0 0 4px;
+    }
+    .section-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: rgba(124,58,237,.2);
+      transform: translateY(-1px);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: .85rem;
+      margin-bottom: 1.1rem;
+    }
+    .section-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, rgba(124,58,237,.12) 0%, rgba(236,72,153,.1) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+    .section-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      letter-spacing: -.015em;
+    }
+
+    .section-card p {
+      font-size: .95rem;
+      color: var(--gray-700);
+      line-height: 1.75;
+      margin-bottom: .75rem;
+    }
+    .section-card p:last-child { margin-bottom: 0; }
+    .section-card p strong {
+      color: var(--gray-900);
+      font-weight: 600;
+    }
+
+    /* ── Exception List ── */
+    .exception-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .85rem;
+      margin-top: .5rem;
+    }
+    .exception-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: .85rem;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+    }
+    .exception-list .e-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--purple) 0%, var(--pink) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .95rem;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(124,58,237,.25);
+    }
+    .exception-list .e-text strong {
+      display: block;
+      font-size: .9rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: .25rem;
+    }
+    .exception-list .e-text span {
+      font-size: .875rem;
+      color: var(--gray-500);
+      line-height: 1.55;
+    }
+
+    /* ── No-Refund List ── */
+    .no-refund-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+      margin-top: .5rem;
+    }
+    .no-refund-list li {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      font-size: .92rem;
+      color: var(--gray-700);
+      padding: .6rem .9rem;
+      border-radius: var(--radius-sm);
+      background: rgba(239,68,68,.04);
+      border: 1px solid rgba(239,68,68,.1);
+    }
+    .no-refund-list .x-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(239,68,68,.12);
+      color: #DC2626;
+      font-size: .7rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ── Steps List (Resolution Process) ── */
+    .steps-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: .5rem;
+      counter-reset: steps;
+    }
+    .steps-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: .85rem 0;
+      border-bottom: 1px solid var(--gray-100);
+      position: relative;
+      counter-increment: steps;
+    }
+    .steps-list li:last-child { border-bottom: none; }
+    .step-num {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--purple) 0%, var(--pink) 100%);
+      color: white;
+      font-size: .8rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(124,58,237,.25);
+    }
+    .step-text {
+      font-size: .92rem;
+      color: var(--gray-700);
+      padding-top: .3rem;
+      line-height: 1.6;
+    }
+    .step-text strong {
+      color: var(--gray-900);
+      font-weight: 600;
+    }
+
+    /* ── Email Link ── */
+    .email-link {
+      color: var(--purple);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1.5px solid rgba(124,58,237,.3);
+      transition: var(--transition);
+    }
+    .email-link:hover {
+      color: var(--pink);
+      border-bottom-color: var(--pink);
+    }
+
+    /* ── Contact Card ── */
+    .contact-card {
+      background: linear-gradient(135deg, var(--purple) 0%, #BE185D 100%);
+      border-radius: var(--radius-lg);
+      padding: 2rem 2.25rem;
+      margin-bottom: 1.5rem;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.07);
+    }
+    .contact-card::after {
+      content: '';
+      position: absolute;
+      bottom: -30px; left: 30px;
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.05);
+    }
+    .contact-card .section-header { margin-bottom: 1rem; }
+    .contact-card .section-icon {
+      background: rgba(255,255,255,.15);
+      backdrop-filter: blur(8px);
+    }
+    .contact-card .section-title { color: white; }
+    .contact-card p {
+      color: rgba(255,255,255,.85);
+      font-size: .95rem;
+      line-height: 1.7;
+      position: relative;
+    }
+    .contact-card .email-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.25);
+      color: white;
+      font-size: .9rem;
+      font-weight: 600;
+      padding: .6rem 1.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      margin-top: .85rem;
+      backdrop-filter: blur(8px);
+      transition: var(--transition);
+      position: relative;
+    }
+    .contact-card .email-pill:hover {
+      background: rgba(255,255,255,.25);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(0,0,0,.15);
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--gray-900);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .footer-logo {
+      font-size: 1.15rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--purple-light) 0%, var(--pink-light) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: .75rem;
+      display: block;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: .25rem .5rem;
+      margin-bottom: 1.25rem;
+    }
+    .footer-links a {
+      color: var(--gray-400);
+      text-decoration: none;
+      font-size: .825rem;
+      font-weight: 500;
+      padding: .25rem .5rem;
+      border-radius: 4px;
+      transition: var(--transition);
+    }
+    .footer-links a:hover { color: var(--purple-light); }
+    .footer-links .separator {
+      color: var(--gray-700);
+      font-size: .825rem;
+      padding: .25rem 0;
+    }
+    .footer-copy {
+      color: var(--gray-500);
+      font-size: .8rem;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      nav { padding: 0 1.25rem; }
+      .content-wrapper { padding: 2.5rem 1rem 4rem; }
+      .section-card { padding: 1.5rem 1.35rem; }
+      .contact-card { padding: 1.5rem 1.35rem; }
+      .friendly-banner { padding: 1.25rem 1.35rem; }
+      .page-header { padding: 4rem 1.25rem 3.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ STICKY NAV ═══ -->
+  <nav>
+    <a href="index.html" class="nav-logo" id="nav-logo">✦ Nexakit</a>
+    <a href="index.html" class="nav-cta" id="nav-cta">Get $0.99 →</a>
+  </nav>
+
+  <!-- ═══ PAGE HEADER ═══ -->
+  <header class="page-header">
+    <div class="header-badge"><span>📋</span> Legal</div>
+    <h1>Refund Policy</h1>
+    <p class="subtitle">Last updated: <strong>June 16, 2026</strong></p>
+  </header>
+
+  <!-- ═══ CONTENT ═══ -->
+  <main class="content-wrapper">
+
+    <!-- Friendly Note -->
+    <div class="friendly-banner" role="note">
+      <div class="icon">💜</div>
+      <p>
+        <strong>Your happiness matters to us.</strong> We truly want every Nexakit customer to feel great about their purchase. If something isn't right, please reach out — we're here to help and will do our best to make it work for you.
+      </p>
+    </div>
+
+    <!-- 1. Our Policy -->
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-icon">📦</div>
+        <h2 class="section-title">Our Policy</h2>
+      </div>
+      <p>
+        Nexakit is a <strong>digital downloadable product</strong>. Because digital files are instantly accessible and cannot be "returned" once delivered, <strong>all sales are generally final</strong>.
+      </p>
+      <p>
+        By completing your purchase you acknowledge that you have read this policy and understand the non-refundable nature of digital goods. This policy is in accordance with standard digital product sales practices.
+      </p>
+    </div>
+
+    <!-- 2. Exception Cases -->
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-icon">⚡</div>
+        <h2 class="section-title">Exception Cases</h2>
+      </div>
+      <p>We absolutely want to make things right when a genuine issue occurs. We will review refund or replacement requests in the following situations:</p>
+      <ul class="exception-list">
+        <li>
+          <div class="e-icon">📧</div>
+          <div class="e-text">
+            <strong>Never received the download email</strong>
+            <span>If you completed your purchase but never received the delivery email with your download link, contact us <strong>within 24 hours</strong> of purchase. Please also check your spam or junk folder first, as automated emails can sometimes be filtered.</span>
+          </div>
+        </li>
+        <li>
+          <div class="e-icon">🛠️</div>
+          <div class="e-text">
+            <strong>Corrupted or unusable file</strong>
+            <span>If the file you received is corrupted, won't open, or is otherwise unusable on a supported device, we'll investigate immediately and provide a working replacement at no additional cost to you.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 3. How to Request Support -->
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-icon">✉️</div>
+        <h2 class="section-title">How to Request Support</h2>
+      </div>
+      <p>
+        To get help as quickly as possible, please email us at <a href="mailto:support@nexakit.store" class="email-link" id="support-email-link">support@nexakit.store</a> and include the following details in your message:
+      </p>
+      <p>
+        <strong>1.</strong> Your <strong>order number</strong> (found in your confirmation email)<br />
+        <strong>2.</strong> The <strong>email address</strong> used at checkout<br />
+        <strong>3.</strong> A brief <strong>description of the issue</strong> you're experiencing<br />
+        <strong>4.</strong> If applicable, a <strong>screenshot or error message</strong>
+      </p>
+      <p>
+        The more detail you provide, the faster we can resolve your issue.
+      </p>
+    </div>
+
+    <!-- 4. Resolution Process -->
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-icon">⏱️</div>
+        <h2 class="section-title">Resolution Process</h2>
+      </div>
+      <p>Once we receive your support request, here's what happens next:</p>
+      <ol class="steps-list">
+        <li>
+          <div class="step-num">1</div>
+          <div class="step-text"><strong>Acknowledgement</strong> — We'll reply to confirm we've received your request, typically within a few hours.</div>
+        </li>
+        <li>
+          <div class="step-num">2</div>
+          <div class="step-text"><strong>Review</strong> — Our team will look into the issue carefully. This usually takes <strong>24–48 hours</strong> from the time we receive all necessary information.</div>
+        </li>
+        <li>
+          <div class="step-num">3</div>
+          <div class="step-text"><strong>Resolution</strong> — We'll provide a fix, a replacement file, or — in eligible cases — a refund. We'll communicate clearly about what we can offer.</div>
+        </li>
+      </ol>
+    </div>
+
+    <!-- 5. What We Don't Refund -->
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-icon">🚫</div>
+        <h2 class="section-title">What We Don't Refund</h2>
+      </div>
+      <p>To keep our policy fair for everyone, the following situations are <strong>not eligible</strong> for refunds:</p>
+      <ul class="no-refund-list">
+        <li>
+          <div class="x-icon">✕</div>
+          <span><strong>Change of mind</strong> — You no longer want the product after purchasing it</span>
+        </li>
+        <li>
+          <div class="x-icon">✕</div>
+          <span><strong>Wrong app purchased</strong> — You bought Nexakit thinking it was a different product</span>
+        </li>
+        <li>
+          <div class="x-icon">✕</div>
+          <span><strong>Unsupported device or app</strong> — The file does not work on a device or application that is not listed as compatible (please check compatibility before purchasing)</span>
+        </li>
+        <li>
+          <div class="x-icon">✕</div>
+          <span><strong>Already downloaded</strong> — The file has been successfully downloaded and accessed</span>
+        </li>
+        <li>
+          <div class="x-icon">✕</div>
+          <span><strong>Didn't meet expectations</strong> — The product works as described but didn't suit your personal preferences or workflow</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 6. Contact Us -->
+    <div class="contact-card">
+      <div class="section-header">
+        <div class="section-icon">💌</div>
+        <h2 class="section-title">Contact Us</h2>
+      </div>
+      <p>
+        Have a question or need help with your order? We're a small team that genuinely cares — don't hesitate to get in touch. We'd love to hear from you and will do everything we can to make your experience a great one.
+      </p>
+      <a href="mailto:support@nexakit.store" class="email-pill" id="contact-email-pill">
+        📩 support@nexakit.store
+      </a>
+    </div>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <span class="footer-logo">✦ Nexakit</span>
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="index.html" id="footer-home">Home</a>
+      <span class="separator">·</span>
+      <a href="privacy.html" id="footer-privacy">Privacy Policy</a>
+      <span class="separator">·</span>
+      <a href="terms.html" id="footer-terms">Terms of Service</a>
+      <span class="separator">·</span>
+      <a href="disclaimer.html" id="footer-disclaimer">Disclaimer</a>
+    </nav>
+    <p class="footer-copy">© 2026 Nexakit. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
