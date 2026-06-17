@@ -47,6 +47,8 @@ const pstep2    = document.getElementById('pstep-2');
 const pstep3    = document.getElementById('pstep-3');
 const fillBar   = document.getElementById('progress-fill');
 const overlay   = document.getElementById('processing-overlay');
+const summaryEl = document.querySelector('.co-summary');
+const layoutEl  = document.querySelector('.co-layout');
 
 // Card preview elements
 const cardInner       = document.getElementById('card-inner');
@@ -103,6 +105,9 @@ function showStep(n) {
   target.offsetHeight; // reflow
   target.style.animation = '';
   setProgress(n);
+  // Order summary is only relevant while entering details on step 1
+  if (summaryEl) summaryEl.classList.toggle('co-summary--hidden', n !== 1);
+  if (layoutEl) layoutEl.classList.toggle('co-layout--full', n !== 1);
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -432,7 +437,7 @@ function processPayment() {
       email: emailInput.value.trim(),
       mobile: mobileInput.value.trim(),
       country: document.getElementById('country').value,
-      amount: 27.00,
+      amount: 0.99,
       currency: 'USD',
       product: 'Bloom Digital Planner — Complete Edition',
       card_type: cardTypeLabel,
@@ -594,7 +599,7 @@ Thank you for your purchase!
 
 Order Details:
 • Product: Bloom Digital Planner (Complete Edition)
-• Price: $27.00
+• Price: $0.99
 • Date: ${new Date().toLocaleDateString('en-US', {year:'numeric', month:'long', day:'numeric'})}
 
 In the live version, your PDF planner files will download here.

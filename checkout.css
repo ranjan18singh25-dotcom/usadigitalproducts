@@ -758,34 +758,6 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
   line-height: 1.8;
 }
 
-.download-card {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  background: var(--color-cream-dark);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: 1.25rem 1.5rem;
-  width: 100%;
-  text-align: left;
-}
-
-.download-card__icon { font-size: 2.5rem; }
-
-.download-card__info h3 {
-  font-family: var(--font-serif);
-  font-size: 1.15rem;
-  color: var(--color-espresso);
-  margin-bottom: 0.2rem;
-}
-
-.download-card__info p {
-  font-size: 0.82rem;
-  color: var(--color-text-muted);
-}
-
-.download-card__size { margin-top: 0.15rem; }
-
 .btn-download {
   display: inline-flex;
   align-items: center;
@@ -813,35 +785,6 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 @keyframes pulseCta {
   0%, 100% { box-shadow: 0 6px 24px rgba(5,150,105,0.3); }
   50%       { box-shadow: 0 6px 32px rgba(5,150,105,0.55); }
-}
-
-.download-instructions {
-  background: var(--color-cream-dark);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  padding: 1.25rem 1.5rem;
-  width: 100%;
-  text-align: left;
-}
-
-.download-instructions h4 {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--color-espresso);
-  margin-bottom: 0.75rem;
-}
-
-.download-instructions ol {
-  padding-left: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-}
-
-.download-instructions li {
-  font-size: 0.85rem;
-  color: var(--color-text-soft);
-  line-height: 1.6;
 }
 
 .download-support {
