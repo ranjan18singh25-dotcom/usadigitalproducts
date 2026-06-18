@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════
-   BLOOM PLANNER — CHECKOUT PAGE CSS
+   NEXAKIT — CHECKOUT PAGE CSS
    3-Step Premium Checkout | Mobile-First
 ═══════════════════════════════════════════════════════════ */
 
@@ -80,14 +80,20 @@ button { font-family: var(--font-sans); cursor: pointer; border: none; backgroun
 
 .co-nav__logo {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
-  color: var(--color-espresso);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-taupe-dark);
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.35rem;
+  flex-shrink: 0;
+  text-decoration: none;
 }
 
-.co-nav__logo-mark { color: var(--color-blush-dark); }
+.co-nav__logo-mark {
+  color: var(--color-blush-dark);
+  font-size: 1rem;
+}
 
 .co-nav__secure {
   display: flex;
