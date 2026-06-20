@@ -592,7 +592,7 @@ document.getElementById('download-btn').addEventListener('click', function (e) {
     btn.style.background = '';
   }, 3000);
 
-  // Create a demo text file download for testing
+  // Create a demo pdf file download for testing
   const content = `NEXAKIT — DOWNLOAD CONFIRMATION
 =====================================
 Thank you for your purchase!
@@ -610,7 +610,6 @@ Getting Started:
 3. Import the file & tap any hyperlink to navigate
 4. Add your stickers from the included sticker sheets
 
-Need help? support@nexakit.com
 
 © ${new Date().getFullYear()} Nexakit. All rights reserved.
 `;
@@ -618,7 +617,7 @@ Need help? support@nexakit.com
   const url  = URL.createObjectURL(blob);
   const a    = document.createElement('a');
   a.href     = url;
-  a.download = 'Nexakit_DownloadConfirmation.txt';
+  a.download = 'Nexakit_DownloadConfirmation.pdf';
   a.click();
   URL.revokeObjectURL(url);
 });
