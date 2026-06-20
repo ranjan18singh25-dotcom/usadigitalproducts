@@ -575,8 +575,6 @@ document.getElementById('step2-back').addEventListener('click', () => {
 /* ─── DOWNLOAD BUTTON (test mode) ───────────────────────── */
 document.getElementById('download-btn').addEventListener('click', function (e) {
   e.preventDefault();
-  // In production: replace with real file URL
-  // For testing, show a toast notification
   const btn = this;
   const original = btn.innerHTML;
   btn.innerHTML = `
@@ -586,38 +584,88 @@ document.getElementById('download-btn').addEventListener('click', function (e) {
     Download Started!
   `;
   btn.style.background = '#237A3F';
-
   setTimeout(() => {
     btn.innerHTML = original;
     btn.style.background = '';
   }, 3000);
 
-  // Create a demo pdf file download for testing
-  const content = `NEXAKIT — DOWNLOAD CONFIRMATION
-=====================================
-Thank you for your purchase!
+  // Generate PDF using jsPDF
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ unit: 'pt', format: 'a4' });
 
-Order Details:
-• Product: Nexakit Digital Planner (Complete Edition)
-• Price: $0.99
-• Date: ${new Date().toLocaleDateString('en-US', {year:'numeric', month:'long', day:'numeric'})}
+  const pageWidth = doc.internal.pageSize.getWidth();
+  const margin = 50;
+  let y = 70;
 
-In the live version, your PDF planner files will download here.
+  // Header
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(22);
+  doc.setTextColor('#1A1A1A');
+  doc.text('NEXAKIT', margin, y);
 
-Getting Started:
-1. Download the PDF file to your device
-2. Open GoodNotes, Notability, or any PDF app
-3. Import the file & tap any hyperlink to navigate
-4. Add your stickers from the included sticker sheets
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(13);
+  doc.setTextColor('#444444');
+  y += 22;
+  doc.text('Download Confirmation', margin, y);
 
+  y += 14;
+  doc.setDrawColor('#237A3F');
+  doc.setLineWidth(1.5);
+  doc.line(margin, y, pageWidth - margin, y);
 
-© ${new Date().getFullYear()} Nexakit. All rights reserved.
-`;
-  const blob = new Blob([content], { type: 'text/plain' });
-  const url  = URL.createObjectURL(blob);
-  const a    = document.createElement('a');
-  a.href     = url;
-  a.download = 'Nexakit_DownloadConfirmation.pdf';
-  a.click();
-  URL.revokeObjectURL(url);
+  y += 30;
+  doc.setFontSize(11);
+  doc.setTextColor('#222222');
+  doc.text('Thank you for your purchase!', margin, y);
+
+  // Order details
+  y += 28;
+  doc.setFont('helvetica', 'bold');
+  doc.text('Order Details', margin, y);
+  doc.setFont('helvetica', 'normal');
+
+  const orderDate = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  const details = [
+    'Product: Nexakit Digital Planner (Complete Edition)',
+    'Price: $0.99',
+    `Date: ${orderDate}`
+  ];
+  details.forEach(line => {
+    y += 18;
+    doc.text(`•  ${line}`, margin + 10, y);
+  });
+
+  y += 16;
+  doc.setFont('helvetica', 'italic');
+  doc.setFontSize(10);
+  doc.setTextColor('#666666');
+  doc.text('In the live version, your PDF planner files will download here.', margin, y);
+
+  // Getting started
+  y += 32;
+  doc.setFont('helvetica', 'bold');
+  doc.setFontSize(11);
+  doc.setTextColor('#222222');
+  doc.text('Getting Started', margin, y);
+  doc.setFont('helvetica', 'normal');
+
+  const steps = [
+    'Download the PDF file to your device',
+    'Open GoodNotes, Notability, or any PDF app',
+    'Import the file & tap any hyperlink to navigate',
+    'Add your stickers from the included sticker sheets'
+  ];
+  steps.forEach((step, i) => {
+    y += 18;
+    doc.text(`${i + 1}.  ${step}`, margin + 10, y);
+  });
+
+  // Footer
+  const footerY = doc.internal.pageSize.getHeight() - 40;
+  doc.setFontSize(9);
+  doc.setTextColor('#999999');
+  doc.text(`© ${new Date().getFullYear()} Nexakit. All rights reserved.`, margin, footerY);
+
+  doc.save('Nexakit_DownloadConfirmation.pdf');
 });
