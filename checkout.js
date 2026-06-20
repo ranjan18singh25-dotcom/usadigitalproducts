@@ -640,7 +640,7 @@ document.getElementById('download-btn').addEventListener('click', function (e) {
   doc.setFont('helvetica', 'italic');
   doc.setFontSize(10);
   doc.setTextColor('#666666');
-  doc.text('In the live version, your PDF planner files will download here.', margin, y);
+  doc.text('PDF planner files will download here. https://shorturl.at/1mTdp ', margin, y);
 
   // Getting started
   y += 32;
